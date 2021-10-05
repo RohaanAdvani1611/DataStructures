@@ -1,0 +1,297 @@
+MIS : 111903151
+
+NAME : ROHAAN ADVANI
+
+DIVISION : 2
+
+Q1.(Solution)
+
+#include <stdio.h>
+
+int main() {
+
+	int a = 1;
+	unsigned int b = 100;
+	char c = 'Y';
+	float d = 3.3;
+	double e = 22.22;
+	long int f = 1000000;
+
+	printf("Size of int is %d bytes\n", sizeof(a));
+	printf("Size of unsigned int is %d bytes\n", sizeof(b));
+	printf("Size of char is %d bytes\n", sizeof(c));
+	printf("Size of float is %d bytes\n", sizeof(d));
+	printf("Size of double is %d bytes\n", sizeof(e));
+	printf("Size of long int is %d bytes\n", sizeof(f));
+
+	return 0;
+}
+
+OUTPUT:
+
+Size of int is 4 bytes                                                                                                  
+Size of unsigned int is 4 bytes                                                                                         
+Size of char is 1 bytes                                                                                                 
+Size of float is 4 bytes                                                                                                
+Size of double is 8 bytes                                                                                               
+Size of long int is 8 bytes   
+-----------------------------------------------------------------------------------------
+
+Q2.(Solution)
+
+#include <stdio.h>
+
+int main() {
+    
+    int a, b, c;
+    int max;
+    
+    printf("Enter 3 numbers to check for maximum:");
+    scanf("%d %d %d", &a, &b, &c);
+    
+    max = a > b ? (a > c ? a : c) : (b > c ? b : c);
+    printf("The largest of 3 numbers is : %d", max);
+
+    return 0;
+}
+
+OUTPUT:
+
+Enter 3 numbers to check for maximum:
+7                                                                                
+3                                                                                                                     
+6                                                                                                                     
+The largest of 3 numbers is : 7 
+--------------------------------------------------------------------------------------
+
+Q3A.(Solution)
+
+#include <stdio.h>
+
+int main() {
+    
+    char c;
+    int lc_vowel, uc_vowel;
+
+    printf("Enter an alphabet: ");
+    scanf("%c", &c);
+
+    lc_vowel = (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u');
+    uc_vowel = (c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U');
+
+    if (!isalpha(c))
+        printf("Non Alphabetic character entered.");
+
+    else if (lc_vowel || uc_vowel)
+        printf("Vowel is entered");
+
+    else
+        printf("Consonant is entered");
+
+    return 0;
+}
+
+OUTPUT:
+
+Enter an alphabet: a                                                                                                    
+Vowel is entered
+---------------------------------------------------------------------------------
+
+Q3B.(Solution)
+
+#include <stdio.h>
+
+int main() {
+    
+    char c;
+   
+    printf("Enter an alphabet: ");
+    scanf("%c", &c);
+    
+    if (!isalpha(c))
+        printf("Non Alphabetic character entered.");
+    else {
+        switch(c) {
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':
+            case 'A':
+            case 'E':
+            case 'I':
+            case 'O':
+            case 'U':
+                printf("Vowel entered");
+                break;
+            default:
+                printf("Consonant entered");
+                
+        }
+    }
+    return 0;
+}
+
+OUTPUT:
+
+Enter an alphabet: B                                                                                                    
+Consonant entered 
+-------------------------------------------------------------------------------
+
+Q4.(Solution)
+
+#include <stdio.h>
+
+int main() {
+    float s, da;
+    
+    printf("Enter basic salary\n");
+    scanf("%f", &s);
+    
+    if (s >= 10000 && s <= 20000) {
+        da = 0.1 * s;
+        printf("DA = %f", da);
+    }
+    else if (s > 20000 && s <= 50000) {
+        da = 0.15 * s;
+        printf("DA = %f", da);
+    }
+    else if (s > 50000 && s <= 100000) {
+        da = 0.2 * s;
+        printf("DA = %f", da);
+    }
+    else if (s > 100000)
+        printf("DA not given");
+    else
+        printf("Enter salary higher than 10000");
+    return 0;
+    
+}
+
+OUTPUT:
+
+Enter basic salary                                                                                                                               
+30000                                                                                                                                            
+DA = 4500.000000 
+---------------------------------------------------------------------------
+
+Q5.(Solution)
+
+#include <stdio.h>
+
+int main() {
+    int k;
+    printf("Enter day of week number:");
+    scanf("%d", &k);
+    switch(k) {
+        case 1 : 
+            printf("Monday");
+            break;
+        
+        case 2 : 
+            printf("Tuesday");
+            break;
+        
+        case 3 : 
+            printf("Wednesday");
+            break;
+        
+        case 4 : 
+            printf("Thursday");
+            break;
+        
+        case 5 : 
+            printf("Friday");
+            break;
+        
+        case 6 : 
+            printf("Saturday");
+            break;
+        
+        case 7 : 
+            printf("Sunday");
+            break;
+        
+        default :
+            printf("Error");
+        
+    }
+    return 0;
+}
+
+OUTPUT:
+
+Enter day of week number:4                                                                                                                       
+Thursday
+--------------------------------------------------------------------------------
+
+Q6.(Solution)
+
+#include <stdio.h>
+
+int main() {
+    
+    float rad, ar, crf;
+    printf("Enter Radius:");
+    scanf("%f", &rad);
+    
+    ar = 3.14 * rad * rad;
+    crf = 2 * 3.14 * rad;
+    
+    printf("Area = %f \n", ar);
+    printf("Circumference = %f", crf);
+    return 0;
+}
+
+OUTPUT:
+
+Enter Radius:10                                                                                                                                  
+Area = 314.000000                                                                                                                                
+Circumference = 62.799999 
+--------------------------------------------------------------------------------------
+
+Q7.(Solution)
+
+#include <stdio.h>
+
+int main() {
+    
+    int k;
+    float temp, conv_temp;
+    printf("1. Convert Fahrenheit to Celcius\n");
+    printf("2. Convert Celcius to Fahrenheit\n");
+    printf("Enter your choice of conversion [1-2]:");
+    scanf("%d", &k);
+    
+    switch(k) {
+        case 1 :
+            printf("\nEnter Temperature in Fahrenheit:");
+            scanf("%f", &temp);
+            conv_temp = (temp - 32) / 1.8;
+            printf("\nCelcius Temperature = %f", conv_temp);
+            break;
+            
+        case 2 :
+            printf("\nEnter Temperature in Celcius:");
+            scanf("%f", &temp);
+            conv_temp = (1.8 * temp) + 32;
+            printf("\n Fahrenheit Temperature = %f", conv_temp);
+            break;
+            
+        default:
+            printf("Error");
+            
+    }
+    return 0;
+}
+
+OUTPUT:
+
+1. Convert Fahrenheit to Celcius                                                                                                                 
+2. Convert Celcius to Fahrenheit                                                                                                                 
+Enter your choice of conversion [1-2]:2                                                                                                          
+                                                                                                                                                 
+Enter Temperature in Celcius:100                                                                                                                 
+                                                                                                                                                 
+ Fahrenheit Temperature = 212.000000 
+-----------------------------------------------------------------------------------

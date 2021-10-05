@@ -1,0 +1,429 @@
+MIS: 111903151
+
+NAME: ROHAAN ADVANI
+
+DIVISION: 2
+--------------------------------------------------------------------------------
+Q1A.(Solution)
+
+#include <stdio.h>
+int main() {
+    int n, i = 1, sum = 0;
+    printf("Enter a natural number: ");
+    scanf("%d", &n);
+
+    while (i <= n) {
+        sum += i;
+        ++i;
+    }
+
+    printf("Sum = %d", sum);
+    return 0;
+}
+
+OUTPUT:
+
+Enter a natural number: 10                                                                                                                       
+Sum = 55 
+---------------------------------------------------------------------------------
+Q1B.(Solution)
+
+#include <stdio.h>
+int main() {
+
+    int i, n, sum = 0;
+    printf("Enter an natural number :");
+    scanf ("%d", &n);
+    for (i = 1; i <= n; i++)
+    	sum = sum + i;
+    printf ("Sum = %d", sum);
+    return 0;
+}
+
+OUTPUT:
+
+Enter an natural number :10                                                                                                                      
+Sum = 55
+---------------------------------------------------------------------------
+Q2.(Solution)
+
+#include <stdio.h>
+int main() {
+    char c;
+    for(c = 'A'; (c >= 'A' && c <= 'Z'); c++)
+        printf("ASCII value of char %c is: %d \n", c, c);
+    for(c = 'a'; (c >= 'a' && c <= 'z'); c++)
+        printf("ASCII value of char %c is: %d \n", c, c);
+    return 0;
+}
+----------------------------------------------------------------------------
+Q3.(Solution)
+
+#include<stdio.h>  
+ int main()    { 
+     
+    int n, n1, sum = 0, c = 1;    
+    printf("Enter a number:");    
+    scanf("%d", &n);
+    n1 = n;
+    while(n != 0)  { 
+       n /= 10;  
+       c *= 10;
+    }
+    n = n1;
+    c /= 10;
+    while(1)    { 
+        n /= c;
+        sum += n;
+        n1 = n1 % c;
+        c /= 10;
+        n1 = n1 % c;
+        n = n1;
+        c /= 10;
+        if (c > 1)
+            continue;
+        else {
+            sum += n;
+            break;
+        }
+    }    
+    printf("Sum of even digits = %d",sum);   
+    return 0;  
+}
+
+OUTPUT:
+  
+Enter a number:54823                                                                                                                           
+Sum of even digits = 16 
+---------------------------------------------------------------------------------
+Q4.(Solution)
+
+#include<stdio.h>    
+#include<stdlib.h> 
+
+int main() { 
+    
+    int bin[30], dec, i, count = 0;    
+      
+    printf("Enter Decimal number: ");    
+    scanf("%d", &dec);    
+    for(i = 0; dec > 0; i++)    {    
+        bin[i] = dec % 2;    
+        dec /= 2;
+	if (bin[i] == 1)
+		count += 1;    
+    }    
+    printf("\nBinary of Given Number is=");    
+    for(i -= 1; i >= 0; i--)    
+    	printf("%d", bin[i]);    
+    printf("\nNumber of ones =%d",count);
+    return 0;  
+}  
+
+OUTPUT:
+
+Enter Decimal number: 15                                                                                              
+                                                                                                                      
+Binary of Given Number is=1111
+
+Number of ones =4
+---------------------------------------------------------------------
+Q5.(Solution)
+
+#include<stdio.h>
+int main() {
+   char c;
+   printf("Please enter an alphabet : ");
+   scanf("%c", &c);
+   if('a' <= c && c <= 'z')
+        printf("Upper case of %c is %c", c, c-32);
+   
+   if('A' <= c && c <= 'Z')
+        printf("Lower case of %c is %c", c, c+32);
+   
+    else
+        printf("Entered character %c is a special character", c);
+   
+    return 0;
+}
+
+OUTPUT:
+
+Please enter an alphabet : F                                                                                                                     
+Lower case of F is f 
+--------------------------------------------------------------------------
+Q6A.(Solution)
+
+#include <stdio.h>
+int main()
+{
+  int row, c, n;
+
+  printf("Enter the number of rows in pyramid of stars to print:");
+  scanf("%d", &n);
+
+  for (row = 1; row <= n; row++)
+  {
+    for (c = 1; c <= n-row; c++)
+      printf(" ");
+
+    for (c = 1; c <= 2*row - 1; c++)
+      printf("*");
+
+    printf("\n");
+  }
+
+  return 0;
+}
+
+OUTPUT:
+
+Enter the number of rows in pyramid of stars to print:5                                                                 
+    *                                                                                                                   
+   ***                                                                                                                  
+  *****                                                                                                                 
+ *******                                                                                                                
+*********
+----------------------------------------------------------------------------
+Q6B.(Solution)
+
+#include <stdio.h>
+int main() {
+    
+   int rows, i, j, num = 1;
+   printf("Enter the number of rows: ");
+   scanf("%d", &rows);
+   for (i = 1; i <= rows; i++) {
+      for (j = 1; j <= i; ++j) {
+         printf("%d ", num);
+         ++num;
+      }
+      printf("\n");
+   }
+   return 0;
+}
+
+OUTPUT:
+
+Enter the number of rows: 4                                                                                             
+1                                                                                                                       
+2 3                                                                                                                     
+4 5 6                                                                                                                   
+7 8 9 10 
+-----------------------------------------------------------------------------
+Q6C.(Solution)
+
+#include<stdio.h>
+int main() {
+	int i, j, k, m, r = 8,n,o,p;
+	for(i = 0;i <= 4;i++) {
+		for(j = 0; j <= i;j++) {
+			if(j % 2 == 0)
+				printf("0");
+			else
+				printf("1");
+		}
+		for(k = 1; k <= r; k++) {
+			printf(" ");
+		}
+		r = r - 2;
+		for(m = 0; m <= i; m++) {
+			if(m % 2 == 0)
+                		printf("0");
+			else
+                		printf("1");
+		}
+		printf("\n");
+	}
+    return 0;
+}
+
+OUTPUT:
+
+0        0
+01      01
+010    010
+0101  0101
+0101001010
+-------------------------------------------------------------------------
+Q6D.(Solution)
+
+#include <stdio.h>
+int main() {
+   int rows, coef = 1, space, i, j;
+   printf("Enter the number of rows: ");
+   scanf("%d", &rows);
+   for (i = 0; i < rows; i++) {
+      for (space = 1; space <= rows - i; space++)
+         printf("  ");
+      for (j = 0; j <= i; j++) {
+         if (j == 0 || i == 0)
+            coef = 1;
+         else
+            coef = coef * (i - j + 1) / j;
+         printf("%4d", coef);
+      }
+      printf("\n");
+   }
+   return 0;
+}
+
+OUTPUT:
+
+Enter the number of rows: 6                                                                                                                      
+               1                                                                                                                                 
+             1   1                                                                                                                               
+           1   2   1                                                                                                                             
+         1   3   3   1                                                                                                                           
+       1   4   6   4   1                                                                                                                         
+     1   5  10  10   5   1
+----------------------------------------------------------------------------
+Q7.(Solution)
+
+#include <stdio.h>
+int main() {
+    int n1, n2, lcm, gcd, i;
+    printf("Enter first no: ");
+    scanf("%d", &n1);
+    printf("Enter second no: ");
+    scanf("%d", &n2);
+
+    lcm = (n1 > n2) ? n1 : n2;
+
+    while (1) {
+        if (lcm % n1 == 0 && lcm % n2 == 0) {
+            printf("The LCM of %d and %d is %d.", n1, n2, lcm);
+            break;
+        }
+        ++lcm;
+    }
+    for(i = 1; i <= n1 && i <= n2; ++i) {
+        
+        if(n1 % i == 0 && n2 % i == 0)
+            gcd = i;
+    }
+
+    printf("\nThe GCD of %d and %d is %d", n1, n2, gcd);
+    return 0;
+}
+
+OUTPUT:
+
+Enter first no: 18                                                                                                                             
+Enter second no: 12                                                                                                                             
+The LCM of 18 and 12 is 36.                                                                                                                     
+The GCD of 18 and 12 is 6.
+-----------------------------------------------------------------------------
+Q8.(Solution)
+
+ #include <stdio.h>
+ 
+int main() {
+  int i, Num, count; 
+  
+  printf(" Prime Number from 1 to 100 are: \n"); 
+  for(Num = 1; Num <= 100; Num++) {
+      
+    count = 0;
+    for (i = 2; i <= (Num / 2); i++) {
+  	    if(Num % i == 0) {
+            count++;
+  	        break;
+  	    }
+    }
+    if(count == 0 && Num != 1 )
+        printf(" %d ", Num);
+ }
+  return 0;
+}
+
+OUTPUT:
+  
+Prime Number from 1 to 100 are:                                                                                                               
+ 2  3  5  7  11  13  17  19  23  29  31  37  41  43  47  53  59  61  67  71  73  79  83  89  97
+--------------------------------------------------------------------------------------------------
+Q9.(Solution)
+
+COSINE SER.
+-----------
+#include<stdio.h>
+int main() {
+    float x, f = 1, res = 1, sum = 1, temp; 
+    //x is angle in degree
+    int i, j;
+    printf("Enter the angle in degrees : ");
+    scanf("%f", &x);
+    temp = x;
+    x = (x * 3.14) / 180;
+    for(i = 1; i < 100; i++) {
+        f = f * i;
+        res = 1;
+        if(i % 2 == 0 && i % 4 != 0) {
+            for(j = 0;j < i;j++) {
+                res = res * x;
+            }
+            sum = sum - (res / f);
+        }
+        else if(i % 4 == 0) {
+            for(j = 0;j < i;j++) {
+                res = res * x;
+            }           
+            sum = sum + (res / f);
+        }
+    }
+    printf("Cos(%f) = %f", temp, sum);
+    return 0;
+}
+
+SINE SER.
+---------
+#include<stdio.h>
+int main() {
+    float x, f = 1, res = 1, sum, temp;
+    int i, j;
+    printf("Enter the angle in degrees : ");
+    scanf("%f", &x);
+    temp = x;
+    x = (x * 3.14) / 180;
+    sum = x;
+    for(i = 2; i < 100; i++) {
+        f = f * i;
+        res = 1;
+        if((i - 1) % 2 == 0 && (i - 1) % 4 != 0) {
+            for(j = 0;j < i;j++) {
+                res = res * x;
+            }
+            sum = sum - (res / f);
+        }
+        else if((i - 1) % 4 == 0) {
+            for(j = 0;j < i;j++) {
+                res = res * x;
+            }           
+            sum = sum + (res / f);
+        }
+    }
+    printf("Sin(%f) = %f", temp, sum);
+    return 0;
+}
+
+EXPONENTIAL SER.
+----------------
+#include<stdio.h>
+int main() {
+    int i, j;
+    float x, sum = 1, res = 1, f = 1;
+    printf("Enter the value of x : ");
+    scanf("%f", &x);
+    for(i = 1; i <= 100; i++) {
+        f = f * i;
+        res = 1;
+        for(j = 1; j <= i;j++) {
+            res = res * x;
+        }
+        sum = sum + (res / f);
+    }
+    printf("\ne^(%f) = %f",x,sum);
+    return 0;
+}
+-------------------------------------------------------------------
+
